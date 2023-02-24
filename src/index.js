@@ -21,20 +21,20 @@ async function init() {
   }
 
   const { configureButton } = await setup({
-    apiKey: "7909b65c-8629-4e2b-8d83-d3c0993a4858"
+    apiKey: "7909b65c-8629-4e2b-8d83-d3c0993a4858",
   });
 
   configureButton({
     element: button,
     hooks: {
-      onInsertClicked: (shareLink) => {
+      onInsertClicked: (obj) => {
         console.log("clicked insert");
-        console.log(shareLink);
+        console.log(obj.sharedUrl);
       },
       onStart: () => console.log("start"),
       onCancel: () => console.log("cancelled"),
-      onComplete: () => console.log("complete")
-    }
+      onComplete: () => console.log("complete"),
+    },
   });
 }
 
